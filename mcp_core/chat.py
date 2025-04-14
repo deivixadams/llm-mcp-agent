@@ -26,6 +26,7 @@ async def chat_main(
         # 4️⃣ Crear el agente ReAct con el modelo y las herramientas
         agent: Runnable = create_react_agent(model, tools)
 
+
         print("\n🤖 MCP Chat iniciado. Escribe tu pregunta (Ctrl+C para salir):\n")
         print("📌 Escribe `/list_tools` para ver herramientas disponibles.\n")
 
@@ -35,6 +36,8 @@ async def chat_main(
                 if not query:
                     continue
 
+                ''' Comando especial: salir
+                
                 # 🔎 Comando especial: listar herramientas
                 if query == "/list_tools":
                     print("\n🧾 Herramientas disponibles:")
@@ -42,6 +45,21 @@ async def chat_main(
                         print(f"  - 🔧 {tool.name}: {tool.description}")
                     print()  # línea vacía para separar
                     continue
+                '''        
+
+                
+                if query == "/list_tools":
+                    print("\n🧾 Herramientas disponibles:\n")
+                    for tool in tools:
+                        print(f"🔧 {tool.name}")
+                        if tool.description:
+                            desc = tool.description.strip().split(".")[0].strip()
+                            print(f"    ↪ {desc}.")
+                        print()
+                    continue
+
+
+
 
                 # 🧠 Consulta natural → agente
                 messages = [HumanMessage(content=query)]
@@ -50,8 +68,8 @@ async def chat_main(
                 for msg in result["messages"]:
                     print("🤖 Modelo:", msg.content)
 
-                    print("🔧 Depuración------>")
-                    print("🤖 Mensaje completo:", msg.dict())
+                    #print("🔧 Depuración------>")
+                    #print("🤖 Mensaje completo:", msg.dict())
 
             except KeyboardInterrupt:
                 print("\n👋 Chat finalizado.")

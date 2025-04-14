@@ -5,7 +5,7 @@ from langchain_mcp_adapters.tools import load_mcp_tools
 from langgraph.prebuilt import create_react_agent
 from langchain_ollama import ChatOllama
 
-model = ChatOllama(model="llama3.2")  # Use a model available via Ollama
+model = ChatOllama(model="qwen2.5:7b")  # Use a model available via Ollama
 async def main():
     server_params = StdioServerParameters(
         command="python",
