@@ -1,0 +1,17 @@
+{
+    "mcpServers": {
+      "strings": {
+        "command": "python",
+        "args": ["string_tools_server.py"]
+      },
+      "datetime": {
+        "command": "python",
+        "args": ["datetime_tools_server.py"]
+      },
+      "filesystem": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-filesystem", "./sandbox"]
+      }
+    }
+  }
+  

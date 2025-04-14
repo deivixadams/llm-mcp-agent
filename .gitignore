@@ -1,0 +1,37 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+venv/
+
+# Pytest
+.cache/
+
+# Local tools
+*.log
+*.sqlite3
+*.db
+
+# Model context sandbox
+sandbox/
+
+
+# VSCode or JetBrains
+.vscode/
+.idea/

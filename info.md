@@ -1,0 +1,1 @@
+# LangGraph + MCP + Ollama = Plug-n-play AI agents with real-world utility
